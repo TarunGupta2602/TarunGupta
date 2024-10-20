@@ -2,26 +2,440 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body, html {
+  width: 100%;
+  height: 100%;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.intro {
+  width: 200vh;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  flex-direction: column; /* Stack items vertically */
+  background-image: url("https://img.freepik.com/free-photo/top-view-desk-concept-with-copy-space_23-2148459498.jpg?w=1060&t=st=1729350053~exp=1729350653~hmac=7ed794ef95e713530e7907d89dfa78fc2a3c607b13b0da2bd818bca2f3956809");
+  background-size: cover; /* Ensure the background image covers the section */
+  background-position: center; /* Center the background image */
+}
+
+.content{
+  width: 100%;
+  height: 80vh; /* Full viewport height */
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  flex-direction: column; /* Stack items vertically */
+}
+
+.intro {
+  text-align: center;
+  font-size: 50px;
+  font-style: italic;
+}
+
+.content {
+  flex-direction: row; /* Side-by-side layout */
+}
+
+.left-paragraph,
+.right-paragraph,
+.p {
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Add transition for opacity and transform */
+}
+
+.left-paragraph {
+  width: 100vh;
+  padding: 20px;
+  font-size: 25px; /* Add padding for text */
+  font-style: oblique;
+  margin-left: 60px;
+  margin-top: 10vh;
+
+}
+
+.right-paragraph {
+  width: 140vh;
+  padding: 10px;
+  margin-left: 190px;
+  margin-top: 30vh;
+  font-size: 40px;
+  font-style: italic;
+  color: rgb(157, 157, 238); /* Add padding for text */
+}
+
+.p {
+  width: 30%;
+  margin-left: 100px;
+  font-size: 29px; /* Add padding for text */
+  font-style: italic;
+  margin-top: 10vh;
+}
+
+.new {
+  width: 55%;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  margin-left: 50vh;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.new1 {
+  width: 55vh;
+  height: 10vh;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 18px;
+  margin-left: 70vh;
+  font-style: italic;
+}
+
+.cv-button {
+  text-align: center;
+  float: left;
+  margin-left: 90px;
+  margin-top: 30px;
+}
+
+.cv-button a {
+  padding: 15px 25px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cv-button a:hover {
+  background-color: #0056b3;
+}
+
+.photo-section {
+  display: flex; /* Center the image */
+  margin-left: 78vh; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  overflow: hidden; /* Prevent overflow from scaling */
+  margin-top: 190px;
+   /* Space above the photo section */
+}
+
+.round-photo {
+  width: 300px; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
+  border-radius: 50%; /* Make the image round */
+  transition: transform 0.5s ease; /* Smooth transition for transform */
+}
+
+.round-photo:hover {
+  transform: scale(1.1); /* Zoom in effect */
+}
+
+
+.more-content {
+  width: 60%;
+  margin-top: 70px;
+  text-align: center;
+  font-size: 30px;
+  margin-left: 370px;
+  font-style: italic;
+}
+
+.neww {
+  font-size: 50px;
+  margin-left: 400px;
+  font-style: italic;
+}
+
+.cv-button1-container {
+  margin-left: 80vh;/* Center the buttons horizontally */
+  margin-top: 30px;
+}
+
+.cv-button1 {
+  display: inline-block; /* Makes buttons stay in a row */
+  margin: 0 10px; /* Adds space between the buttons */
+}
+
+.cv-button1 a {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cv-button1 a:hover {
+  background-color: #0056b3;
+}
+.h-screen {
+  height: 85vh;
+}
+
+.head {
+  width: 100%; /* Full width */
+  height: 100px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-style: italic;
+  margin-top: 17vh;
+  opacity: 0;
+  animation: smokeEffect 2s forwards; /* Smoke effect for header */
+}
+
+.cards-container {
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px; /* Adjust as needed */
+}
+
+.card {
+  display: inline-block;
+  margin: 21px  39px;
+  width: 37vh; /* Adjust width as needed */
+  height: 37vh; /* Adjust height as needed */
+  border-radius: 1rem;
+  background-color: black;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: showCard 0.5s forwards ease-in-out; /* Animation for the card */
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+
+.card h1, .card h2, .card p {
+  font-style: italic;
+  text-align: center;
+  padding: 20px 30px;
+  font-size: 19px;
+  color: whitesmoke;
+}
+
+@keyframes smokeEffect {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px); /* Start position */
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(0); /* Middle position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End position */
+  }
+}
+
+@keyframes showCard {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .intro {
+    font-size: 20px;
+     /* Smaller font size on medium screens */
+  }
+
+  .left-paragraph,
+  .right-paragraph,
+  .p {
+    width: 100%; /* Full width on medium screens */
+    margin-left: 0; /* Remove margin for better alignment */
+    font-size: 20px; /* Smaller font size on medium screens */
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Move down slightly */
+    display: inline-block;
+  }
+
+  .new,
+  .new1 {
+    margin-left: 0; /* Center text on smaller screens */
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Move down slightly */
+  }
+
+  .photo-section {
+    margin-left: 0; /* Center photo section */
+  }
+
+  .cv-button {
+    margin-left: 0; /* Center buttons on smaller screens */
+    float: none; /* Remove float */
+  }
+
+  .cv-button1-container {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons */
+  }
+
+  .cv-button1 {
+    margin-bottom: 10px; /* Add space between buttons */
+  }
+
+  /* Paragraphs will appear one by one */
+  .left-paragraph,
+  .right-paragraph,
+  .p,
+  .new,
+  .new1 {
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start position for animation */
+  }
+
+  /* Using animation delays to show paragraphs one by one */
+  .left-paragraph {
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 0.5s; /* Delay for left paragraph */
+  }
+
+  .right-paragraph {
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 1s; /* Delay for right paragraph */
+  }
+
+  .p {
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 1.5s; /* Delay for p paragraph */
+  }
+
+  .new {
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 2s; /* Delay for new */
+  }
+
+  .new1 {
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 2.5s; /* Delay for new1 */
+  }
+
+}
+
+@media (max-width: 768px) {
+  .intro {
+    font-size: 30px;
+    height: 40vh; /* Smaller font size on small screens */
+  }
+
+  .left-paragraph,
+  .right-paragraph,
+  .p {
+    font-size: 16px; /* Smaller font size on small screens */
+  }
+
+  .new,
+  .new1 {
+    font-size: 17px;
+    margin-left: 79px; /* Smaller font size on small screens */
+  }
+
+  .more-content {
+    font-size: 28px; /* Adjust size for more content */
+    margin-left: 70px; /* Center content */
+  }
+
+  .neww {
+    font-size: 40px; /* Smaller font size on small screens */
+    margin-left: 70px; /* Center text */
+  }
+}
+
+@media (max-width: 640px) {
+  .intro {
+    font-size: 24px;
+    width: 100%; /* Smaller font size on extra small screens */
+  }
+
+  .left-paragraph{
+    font-size: 16px;
+    margin-top: 24%;
+    width: 100%;
+    
+
+  }
+  .right-paragraph{
+    margin-top: 24%;
+    font-size: 19px;
+    width: 100%;
+  }
+  .p {
+    margin-top: 24%;
+    font-size: 30px;
+    font-weight: lighter;
+    width: 70%;
+    margin-left: 20%;
+    /* Smaller font size on extra small screens */
+  }
+
+  .new,
+  .new1 {
+    font-size: 14px;
+    margin-left: 26%;
+    width: 27vh; /* Smaller font size on extra small screens */
+  }
+
+  .more-content {
+    font-size: 20px; /* Adjust size for more content */
+  }
+
+  .round-photo {
+    width: 200px; /* Smaller photo size */
+    height: 200px; /* Smaller photo size */
+  }
+  .cv-button1-container {
+    margin-left: 6vh;/* Center the buttons horizontally */
+  }
+  .photo-section {
+    
+    margin-left: 10vh; /* Center horizontally */
+    
+  }
+  .h-screen {
+    height: 100%;
+  }
+  
+  
+}
+
+/* Keyframes for Fade In Up Effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
