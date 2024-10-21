@@ -29,32 +29,32 @@ const Page = () => {
                         }} 
                         className="bg-black p-8 rounded-lg shadow-md w-full"
                     >
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                        <label htmlFor="name" className="block text-sm font-medium text-white">Name</label>
                         <input
                             type="text"
                             name="name"
                             placeholder="Enter your name"
                             required
-                            className="mt-1 block w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-500"
+                            className="mt-1 block w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-500 bg-gray-800"
                         />
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mt-4">Email Address</label>
+                        <label htmlFor="email" className="block text-sm font-medium text-white mt-4">Email Address</label>
                         <input
                             type="email"
                             name="email"
                             placeholder="Enter your email"
                             required
-                            className="mt-1 block w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-500"
+                            className="mt-1 block w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring focus:ring-blue-500 bg-gray-800"
                         />
-                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mt-4">Your Message</label>
+                        <label htmlFor="message" className="block text-sm font-medium text-white mt-4">Your Message</label>
                         <textarea
                             name="message"
                             placeholder="Enter your message for me"
                             required
-                            className="mt-1 block w-full border border-gray-300 rounded-md p-3 h-48 focus:outline-none focus:ring focus:ring-blue-500"
+                            className="mt-1 block w-full border border-gray-300 rounded-md p-3 h-48 focus:outline-none focus:ring focus:ring-blue-500 bg-gray-800"
                         />
                         <button 
                             type="submit" 
-                            className="mt-4 w-full bg-blue-600 text-white font-bold py-3 rounded-md hover:bg-blue-700 transition duration-200"
+                            className="mt-4 w-full bg-blue-700 text-white font-bold py-3 rounded-md hover:bg-blue-700 transition duration-200"
                         >
                             Send Now 🦭
                         </button>

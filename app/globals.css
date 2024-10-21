@@ -261,6 +261,116 @@ body {
 }
 
 
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .intro {
+    font-size: 20px;
+     /* Smaller font size on medium screens */
+  }
+
+  .left-paragraph,
+  .right-paragraph,
+  .p {
+    width: 100%; /* Full width on medium screens */
+    margin-left: 0; /* Remove margin for better alignment */
+    font-size: 20px; /* Smaller font size on medium screens */
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Move down slightly */
+    display: inline-block;
+  }
+
+  .new,
+  .new1 {
+    margin-left: 0; /* Center text on smaller screens */
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Move down slightly */
+  }
+
+  .photo-section {
+    margin-left: 0; /* Center photo section */
+  }
+
+  .cv-button {
+    margin-left: 0; /* Center buttons on smaller screens */
+    float: none; /* Remove float */
+  }
+
+  .cv-button1-container {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons */
+  }
+
+  .cv-button1 {
+    margin-bottom: 10px; /* Add space between buttons */
+  }
+
+  /* Paragraphs will appear one by one */
+  .left-paragraph,
+  .right-paragraph,
+  .p,
+  .new,
+  .new1 {
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start position for animation */
+  }
+
+  /* Using animation delays to show paragraphs one by one */
+  .left-paragraph {
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 0.5s; /* Delay for left paragraph */
+  }
+
+  .right-paragraph {
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 1s; /* Delay for right paragraph */
+  }
+
+  .p {
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 1.5s; /* Delay for p paragraph */
+  }
+
+  .new {
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 2s; /* Delay for new */
+  }
+
+  .new1 {
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 2.5s; /* Delay for new1 */
+  }
+
+}
+
+@media (max-width: 768px) {
+  .intro {
+    font-size: 30px;
+    height: 40vh; /* Smaller font size on small screens */
+  }
+
+  .left-paragraph,
+  .right-paragraph,
+  .p {
+    font-size: 16px; /* Smaller font size on small screens */
+  }
+
+  .new,
+  .new1 {
+    font-size: 17px;
+    margin-left: 79px; /* Smaller font size on small screens */
+  }
+
+  .more-content {
+    font-size: 28px; /* Adjust size for more content */
+    margin-left: 70px; /* Center content */
+  }
+
+  .neww {
+    font-size: 40px; /* Smaller font size on small screens */
+    margin-left: 70px; /* Center text */
+  }
+}
+
 @media (max-width: 640px) {
   .intro {
     font-size: 24px;
