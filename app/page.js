@@ -9,7 +9,7 @@ const home = () => {
     <div className="container">
       <section className="intro">
         <div>
-          <span className="text-white text-5xl" className="type">Ask me </span>
+          <span className="text-white text-5xl" >Ask me </span>
 
           <TypeAnimation
             sequence={[
