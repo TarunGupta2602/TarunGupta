@@ -27,7 +27,7 @@ const Page = () => {
                             ref.current.reset();
                             alert("Done.");
                         }} 
-                        className="bg-white p-8 rounded-lg shadow-md w-full"
+                        className="bg-black p-8 rounded-lg shadow-md w-full"
                     >
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
                         <input
