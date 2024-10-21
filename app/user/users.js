@@ -37,7 +37,7 @@ export const createUser = async (formData) => {
   try {
     // Insert form data into your Supabase table (e.g., 'users')
     const { data, error } = await supabase
-      .from('users') // Replace 'users' with your table name
+      .from('submissions') // Replace 'users' with your table name
       .insert([{ name, email, message }]);
 
     if (error) {

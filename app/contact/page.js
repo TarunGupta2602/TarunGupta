@@ -21,7 +21,7 @@ const ref = useRef();
                 </div>
             </div>
             <div className="flex justify-end w-full md:w-2/3 max-w-xl px-8 md:px-18 lg:px-6">
-                <form ref={ref} action={(e)=>{createUser(e); ref.current.reset(); alert("Information Send Success");}}      className="bg-white p-8 rounded-lg shadow-md w-full">
+                <form ref={ref} action={(e)=>{createUser(e); ref.current.reset(); alert("Done.");}}      className="bg-white p-8 rounded-lg shadow-md w-full">
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
                     <input
                         type="text"
