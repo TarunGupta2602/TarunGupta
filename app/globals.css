@@ -33,7 +33,7 @@ body {
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
   flex-direction: column; /* Stack items vertically */
-  background-image: url("https://img.freepik.com/free-photo/top-view-desk-concept-with-copy-space_23-2148459498.jpg?w=1060&t=st=1729350053~exp=1729350653~hmac=7ed794ef95e713530e7907d89dfa78fc2a3c607b13b0da2bd818bca2f3956809");
+  background-image: url("https://img.freepik.com/free-photo/flat-lay-workstation-with-copy-space-laptop_23-2148430879.jpg?t=st=1729664027~exp=1729667627~hmac=9d167daf9a2585e6916ff0c22b192fbd8110a5d237d7dd1c6949068ab4aa543a&w=1380");
   background-size: cover; /* Ensure the background image covers the section */
   background-position: center; /* Center the background image */
 }
