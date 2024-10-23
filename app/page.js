@@ -42,7 +42,7 @@ const home = () => {
       </section>
       <p className="p">Discover the trails I&apos;ve blazed in the landscape of tech</p>
       <section className="cv-button">
-        <a href="https://drive.google.com/file/d/1QKbdB4A41HNSvhwif0ndYxxWUsBkHMc8/view?usp=drive_link" target="_blank" rel="noopener noreferrer">CHECK OUT</a>
+        <a href="https://drive.google.com/file/d/1AeyiGXP4z9bj3UQQDlES2muViOpC0x5T/view?usp=sharing" target="_blank" rel="noopener noreferrer">CHECK OUT</a>
       </section>
 
       <section className="photo-section">
