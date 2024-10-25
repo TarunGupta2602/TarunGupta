@@ -1,7 +1,7 @@
 "use client";
 import { TypeAnimation } from 'react-type-animation';
 import React from 'react';
-import MyImage from '@/public/1641179396290 (1).jpg';
+import MyImage from '@/public/new.jpg';
 import Image from 'next/image';
 
 const home = () => {
