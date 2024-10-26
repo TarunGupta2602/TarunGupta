@@ -218,8 +218,7 @@ body {
   height: 37vh; /* Adjust height as needed */
   border-radius: 1rem;
   background-color: black;
-  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  background-image: src("https://pics.craiyon.com/2023-06-01/1226da8f422d416a9cef395f982d9a08.webp");
   transform: translateY(20px);
   opacity: 0;
   animation: showCard 0.5s forwards ease-in-out; /* Animation for the card */
