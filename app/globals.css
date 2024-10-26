@@ -218,7 +218,9 @@ body {
   height: 37vh; /* Adjust height as needed */
   border-radius: 1rem;
   background-color: black;
-  background-image: src("https://pics.craiyon.com/2023-06-01/1226da8f422d416a9cef395f982d9a08.webp");
+  background-image: url("https://pics.craiyon.com/2023-06-01/1226da8f422d416a9cef395f982d9a08.webp");
+  background-size: cover; /* Ensure the background image covers the section */
+  background-position: center;
   transform: translateY(20px);
   opacity: 0;
   animation: showCard 0.5s forwards ease-in-out; /* Animation for the card */
