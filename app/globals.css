@@ -146,10 +146,18 @@ body {
   transition: transform 0.5s ease; /* Smooth transition for transform */
 }
 
-.round-photo:hover {
-  transform: scale(1.1); /* Zoom in effect */
+.round-photo {
+  animation: shrink 4s ease-in-out, rotate 3s linear ;
 }
 
+
+
+@keyframes shrink{
+  50%{transform: scale(0.5,0.5);}
+}
+@keyframes rotate {
+  50%{transform: rotateZ(180deg);}
+}
 
 .more-content {
   width: 60%;
