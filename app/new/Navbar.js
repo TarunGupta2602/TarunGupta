@@ -11,7 +11,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-black">
+        <nav className="bg-black sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
                 <div className="text-white text-lg font-semibold font-serif">
                     <Link href="/">TarunGupta</Link>
