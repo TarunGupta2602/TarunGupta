@@ -77,7 +77,7 @@ body {
   width: 140vh;
   padding: 10px;
   margin-left: 190px;
-  margin-top: 30vh;
+  margin-top: 20vh;
   font-size: 40px;
   font-style: italic;
   color: rgb(157, 157, 238); /* Add padding for text */
@@ -395,7 +395,7 @@ body {
   }
   .right-paragraph{
     margin-top: 8%;
-    font-size: 20px;
+    font-size: 21px;
     width: 100%;
   }
   .p {
