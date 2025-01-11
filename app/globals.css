@@ -360,7 +360,7 @@ body {
   .left-paragraph,
   .right-paragraph,
   .p {
-    font-size: 16px; /* Smaller font size on small screens */
+    font-size: 12px; /* Smaller font size on small screens */
   }
 
   .new,
@@ -395,7 +395,11 @@ body {
   }
   .right-paragraph{
     margin-top: 5%;
+<<<<<<< HEAD
     font-size: 21px;
+=======
+    font-size: 20px;
+>>>>>>> 5870621 (Some changes)
     width: 100%;
   }
   .p {
