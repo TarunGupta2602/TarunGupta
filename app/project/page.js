@@ -5,14 +5,16 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa';
 import { SiTailwindcss, SiNextdotjs, SiMongodb, SiExpress } from 'react-icons/si';
 
+
+
 const ProjectPage = () => {
   const projects = [
     {
       title: "GeekSoft",
       description: "A comprehensive software development platform offering cutting-edge solutions for modern businesses. Features include project management, team collaboration, and advanced analytics.",
-      image: "/geeksoft-preview.jpg", // Make sure to add this image
+      image: "/geek.png",
       liveLink: "https://geeksoft.org",
-      githubLink: "https://github.com/yourusername/geeksoft",
+      githubLink: "https://github.com/TarunGupta2602/smartsolution",
       technologies: [
         { icon: <SiNextdotjs />, name: "Next.js" },
         { icon: <FaReact />, name: "React" },
@@ -30,8 +32,8 @@ const ProjectPage = () => {
     {
       title: "Web Development Portfolio",
       description: "A showcase of web development projects demonstrating expertise in modern frontend technologies and responsive design principles.",
-      image: "/portfolio-preview.jpg", // Add this image
-      liveLink: "https://tarungupta2602.github.io/webtask.github.io/",
+      image: "/port.png",
+      liveLink: "https://portfolio-zeta-beige-66.vercel.app/",
       githubLink: "https://github.com/TarunGupta2602/webtask.github.io",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -48,8 +50,8 @@ const ProjectPage = () => {
     {
       title: "WebYug Platform",
       description: "An innovative web platform built with modern technologies, focusing on user experience and performance.",
-      image: "/webyug-preview.jpg", // Add this image
-      liveLink: "https://webyug.onrender.com",
+      image: "/gzb.png",
+      liveLink: "https://www.gzb.ae/",
       githubLink: "https://github.com/yourusername/webyug",
       technologies: [
         { icon: <FaReact />, name: "React" },
@@ -59,6 +61,23 @@ const ProjectPage = () => {
       features: [
         "Dynamic content loading",
         "User authentication",
+        "Real-time updates",
+        "Responsive interface"
+      ]
+    },
+    {
+      title: "E-commerce website",
+      description: "An innovative web platform built with modern technologies, focusing on user experience and performance.",
+      image: "/ecom.png",
+      liveLink: "https://tarungupta2602.github.io/webtask.github.io/",
+      githubLink: "https://github.com/TarunGupta2602/webtask.github.io",
+      technologies: [
+        { icon: <FaReact />, name: "React" },
+        { icon: <FaNodeJs />, name: "Node.js" },
+        { icon: <FaDatabase />, name: "MongoDB" }
+      ],
+      features: [
+        "Dynamic content loading",
         "Real-time updates",
         "Responsive interface"
       ]
@@ -106,7 +125,7 @@ const ProjectPage = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600"> <br/><br/>
             Featured Projects
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">

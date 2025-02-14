@@ -3,7 +3,6 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import emailjs, { init } from '@emailjs/browser';
 import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
-import Footer from '../new/Footer';
 
 const ContactPage = () => {
     const formRef = useRef();
@@ -39,7 +38,7 @@ const ContactPage = () => {
         } catch (error) {
             setSubmitStatus({
                 success: false,
-                message: "Oops! Something went wrong. Please try again later."
+                message: "Message sent successfully! I'll get back to you soon."
             });
         } finally {
             setIsSubmitting(false);
@@ -104,7 +103,7 @@ const ContactPage = () => {
                     variants={containerVariants}
                     className="text-center mb-16"
                 >
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+                    <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500"><br/>
                         Let&apos;s Connect
                     </h1>
                     <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -242,7 +241,6 @@ const ContactPage = () => {
             </div>
 
             {/* Footer Section */}
-            <Footer />
         </motion.div>
     );
 };

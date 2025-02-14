@@ -58,7 +58,7 @@ const SkillsPage = () => {
         transition={{ duration: 0.8 }}
         className="text-center mb-12"
       > 
-        <h1 className="text-4xl md:text-5xl  font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+        <h1 className="text-4xl md:text-5xl  font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600"> <br/><br/>
           My Technical Arsenal
         </h1>
         <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
