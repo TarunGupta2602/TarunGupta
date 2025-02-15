@@ -61,7 +61,7 @@ const Home = () => {
             variants={fadeInUp}
           >
             <span className="text-3xl sm:text-4xl md:text-5xl font-bold">
-              Hello, I'm
+              Hello, I&apos;m
             </span>
             <TypeAnimation
               sequence={[
@@ -133,7 +133,7 @@ const Home = () => {
               seamless digital experiences that leave a lasting impression.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              When I'm not coding, you'll find me exploring new technologies, 
+              When I&apos;m not coding, you&apos;ll find me exploring new technologies, 
               contributing to open-source projects, or sharing knowledge with the 
               developer community.
             </p>
@@ -173,7 +173,7 @@ const Home = () => {
               transition: { duration: 0.2 }
             }}
           >
-            Let's Create Something Amazing Together
+            Let&apos;s Create Something Amazing Together
           </motion.h2>
           
           <motion.div 
@@ -240,7 +240,7 @@ const Home = () => {
             transition: { duration: 0.2 }
           }}
         >
-          "In the world of <motion.span 
+          &quot;In the world of <motion.span 
             className="text-yellow-300"
             animate={{
               opacity: [1, 0.5, 1],
@@ -253,7 +253,7 @@ const Home = () => {
               transition: { duration: 2, repeat: Infinity, delay: 1 }
             }}
           >200s</motion.span>, 
-          be the one who creates the path others follow."
+          be the one who creates the path others follow.&quot;
         </motion.p>
       </motion.footer>
     </motion.div>
