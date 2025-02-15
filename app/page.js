@@ -13,7 +13,7 @@ const Home = () => {
     transition: { duration: 0.6 }
   };
 
-  // Add new animation variants
+  
   const staggerContainer = {
     initial: {},
     animate: {
