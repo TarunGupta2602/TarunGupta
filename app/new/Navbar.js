@@ -10,7 +10,7 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
 
     // Handle scroll effect
-    useEffect(() => { //hdbkjfnjkdn
+    useEffect(() => { 
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
         };

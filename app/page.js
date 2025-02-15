@@ -33,7 +33,7 @@ const Home = () => {
     initial: { scale: 1 },
     animate: {
       scale: [1, 1.02, 1],
-      transition: {    //uhgjkhlkjklj
+      transition: {   
         duration: 2,
         repeat: Infinity,
         ease: "easeInOut"
