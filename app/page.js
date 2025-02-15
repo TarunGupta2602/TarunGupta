@@ -2,8 +2,9 @@
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
 import React from 'react';
-import MyImage from '@/public/new.jpg';
 import Image from 'next/image';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { HiDocumentText } from 'react-icons/hi';
 
 const Home = () => {
   const fadeInUp = {
@@ -12,138 +13,251 @@ const Home = () => {
     transition: { duration: 0.6 }
   };
 
+  // Add new animation variants
+  const staggerContainer = {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const slideInFromLeft = {
+    initial: { x: -100, opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+    transition: { duration: 0.8, type: "spring", bounce: 0.4 }
+  };
+
+  const pulseAnimation = {
+    initial: { scale: 1 },
+    animate: {
+      scale: [1, 1.02, 1],
+      transition: {
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
     <motion.div 
-      className="container"
+      className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white px-4 sm:px-6 lg:px-8"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <section className="intro">
-        <motion.div {...fadeInUp}>
-          <span className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-            Ask me
-          </span>
-
-          <TypeAnimation
-            sequence={[
-              ' Frontend...',
-              1000,
-              'ReactJS...',
-              1000,
-              'NextJS...',
-              1000,
-              'Software Development.',
-              1000
-            ]}
-            wrapper="span"
-            speed={50}
-            style={{ fontSize: '1em', color: 'rgb(96 165 250)', display: 'inline-block' }}
-            repeat={Infinity}
-          /> <br /> <br />
-        </motion.div>
-        <motion.h1 
-          className='font-bold'
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+      {/* Hero Section with enhanced animations */}
+      <section className="pt-20 pb-32 max-w-6xl mx-auto">
+        <motion.div 
+          className="space-y-4"
+          variants={staggerContainer}
+          initial="initial"
+          animate="animate"
         >
-          Hi there.. <span className='text-blue-400 font-bold'>I&apos;m Tarun.</span> <br />
-          <span className='text-pretty font-bold text-blue-400'>Self proclaimed,</span> Code polyglot!
-        </motion.h1>
+          <motion.div 
+            className="flex items-center space-x-2"
+            variants={fadeInUp}
+          >
+            <span className="text-3xl sm:text-4xl md:text-5xl font-bold">
+              Hello, I'm
+            </span>
+            <TypeAnimation
+              sequence={[
+                'a Developer',
+                1000,
+                'a Problem Solver',
+                1000,
+                'an Innovator',
+                1000,
+              ]}
+              wrapper="span"
+              speed={50}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-500"
+              repeat={Infinity}
+            />
+          </motion.div>
+          
+          <motion.h1 
+            className="text-5xl sm:text-6xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600"
+            variants={slideInFromLeft}
+            whileHover={{
+              scale: 1.05,
+              textShadow: "0 0 8px rgb(59, 130, 246)",
+              transition: { duration: 0.2 }
+            }}
+          >
+            Tarun Gupta
+          </motion.h1>
+          
+          <motion.p 
+            className="text-lg sm:text-xl text-gray-300 max-w-2xl"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            Crafting digital experiences that merge creativity with functionality. 
+            Specialized in frontend development with a passion for creating 
+            intuitive and impactful web solutions.
+          </motion.p>
+        </motion.div>
       </section>
 
-      <section className="content">
-        <motion.div 
-          className="left-paragraph"
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <p>Emerging from the digital abyss, I am dedicated to revolutionizing technology with a bold proclamation: &quot;Let&apos;s techify the world!&quot; With a touch of digital wizardry, I flip the script on conventional technology, prioritizing innovation and user-centric design. Say goodbye to mundane tech and hello to a realm where complexity fades, capacity skyrockets, and outcomes sparkle with brilliance...</p>
-        </motion.div>
-        <motion.div 
-          className="right-paragraph"
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <p>I&apos;m an aspiring software developer proficient in JavaScript programming with a solid background in frontend development, eager to collaborate on innovative projects within interdisciplinary teams. Passionate about leveraging these technologies in areas such as natural language processing.</p>
-        </motion.div>
-      </section>
-
-      <motion.p 
-        className="p"
-        {...fadeInUp}
-      >
-        Discover the trails I&apos;ve blazed in the landscape of tech
-      </motion.p>
-
+      {/* About Section with enhanced animations */}
       <motion.section 
-        className="cv-button"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <a href="https://docs.google.com/document/d/1BxDhg3eq-eJcy1MMOs8Px5AyZ8UGC5zCgy2_6clwElM/edit?usp=sharing" target="_blank" rel="noopener noreferrer">CHECK OUT</a>
-      </motion.section>
-
-      <motion.section 
-        className="photo-section"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.5, type: "spring" }}
-      >
-        <Image src={MyImage} alt="myimage" className="round-photo" />
-      </motion.section>
-
-      <motion.section 
-        className="more-content"
-        {...fadeInUp}
-      >
-        <p>I aim to excel through innovation, leadership, and impactful contributions.</p>
-      </motion.section>
-
-      <motion.p 
-        className="new"
+        className="py-20 bg-gray-900/50 backdrop-blur-sm"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 1 }}
       >
-        Let me win. But if I cannot win, let me brave in the attempt. For in the chronicles of life, effort always precedes triumph..
-      </motion.p>
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <motion.div 
+            className="space-y-6"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              className="text-3xl font-bold"
+              variants={slideInFromLeft}
+              whileHover={{ scale: 1.05 }}
+            >
+              About Me
+            </motion.h2>
+            <p className="text-gray-300 leading-relaxed">
+              As a software alchemist, I transform complex problems into elegant solutions. 
+              With expertise in React, Next.js, and modern web technologies, I create 
+              seamless digital experiences that leave a lasting impression.
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              When I'm not coding, you'll find me exploring new technologies, 
+              contributing to open-source projects, or sharing knowledge with the 
+              developer community.
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            className="relative h-[400px] rounded-lg overflow-hidden"
+            variants={pulseAnimation}
+            initial="initial"
+            animate="animate"
+            whileHover={{ scale: 1.05 }}
+          >
+            <Image 
+              src="/new.jpg"
+              alt="Profile"
+              fill
+              className="object-cover rounded-lg"
+            />
+          </motion.div>
+        </div>
+      </motion.section>
 
-      <div className="cv-button1-container">
-        <motion.section 
-          className="cv-button1"
-          whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
-          whileTap={{ scale: 0.95 }}
+      {/* CTA Section with enhanced animations */}
+      <section className="py-20">
+        <motion.div 
+          className="max-w-6xl mx-auto text-center space-y-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          <a href="https://github.com/TarunGupta2602" target="_blank" rel="noopener noreferrer">Just Visit</a>
-        </motion.section>
+          <motion.h2 
+            className="text-3xl font-bold"
+            whileHover={{
+              scale: 1.05,
+              color: "#60A5FA",
+              transition: { duration: 0.2 }
+            }}
+          >
+            Let's Create Something Amazing Together
+          </motion.h2>
+          
+          <motion.div 
+            className="flex flex-wrap justify-center gap-4"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.a
+              href="https://github.com/TarunGupta2602"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 px-6 py-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-all"
+              whileHover={{ 
+                scale: 1.1,
+                boxShadow: "0 0 15px rgba(59, 130, 246, 0.5)"
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FaGithub className="text-xl" />
+              <span>GitHub</span>
+            </motion.a>
 
-        <motion.section 
-          className="cv-button1"
-          whileHover={{ scale: 1.05, backgroundColor: "#2563eb" }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <a href="https://www.linkedin.com/in/tarun2606/" target="_blank" rel="noopener noreferrer">🔗Connect Now</a>
-        </motion.section>
-      </div>
+            <motion.a
+              href="https://www.linkedin.com/in/tarun2606/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 px-6 py-3 bg-blue-600 rounded-full hover:bg-blue-700 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <FaLinkedin className="text-xl" />
+              <span>LinkedIn</span>
+            </motion.a>
 
-      <motion.p 
-        className="new1"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+            <motion.a
+              href="https://docs.google.com/document/d/1BxDhg3eq-eJcy1MMOs8Px5AyZ8UGC5zCgy2_6clwElM/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 px-6 py-3 bg-purple-600 rounded-full hover:bg-purple-700 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <HiDocumentText className="text-xl" />
+              <span>Resume</span>
+            </motion.a>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Footer Quote with enhanced animation */}
+      <motion.footer 
+        className="py-12 text-center"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        Try to be <span className='text-yellow-300'>404</span> sometimes, not always the <span className='text-blue-500'>200</span>
-      </motion.p>
+        <motion.p 
+          className="text-lg font-medium text-gray-400"
+          whileHover={{
+            scale: 1.05,
+            transition: { duration: 0.2 }
+          }}
+        >
+          "In the world of <motion.span 
+            className="text-yellow-300"
+            animate={{
+              opacity: [1, 0.5, 1],
+              transition: { duration: 2, repeat: Infinity }
+            }}
+          >404s</motion.span> and <motion.span 
+            className="text-blue-500"
+            animate={{
+              opacity: [1, 0.5, 1],
+              transition: { duration: 2, repeat: Infinity, delay: 1 }
+            }}
+          >200s</motion.span>, 
+          be the one who creates the path others follow."
+        </motion.p>
+      </motion.footer>
     </motion.div>
-  )
+  );
 }
 
 export default Home;

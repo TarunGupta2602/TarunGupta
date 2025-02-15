@@ -1,101 +1,149 @@
 "use client"; // Ensure this is client-side
 
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
+    // Handle scroll effect
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const navLinks = [
+        { href: "/", label: "Home" },
+        { href: "/project", label: "Projects" },
+        { href: "/skills", label: "Skills" },
+        { href: "/contact", label: "Contact" }
+    ];
+
+    const menuVariants = {
+        open: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.3,
+                staggerChildren: 0.1,
+                when: "beforeChildren"
+            }
+        },
+        closed: {
+            opacity: 0,
+            y: -20,
+            transition: {
+                duration: 0.3
+            }
+        }
+    };
+
+    const itemVariants = {
+        open: {
+            opacity: 1,
+            x: 0,
+            transition: { duration: 0.3 }
+        },
+        closed: {
+            opacity: 0,
+            x: -20,
+            transition: { duration: 0.3 }
+        }
     };
 
     return (
-        <nav className="bg-black fixed top-0 left-0 w-full z-50">
-            <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-                <div className="text-white text-lg font-semibold font-serif">
-                    <Link href="/">TarunGupta</Link>
-                </div>
-                <div className="hidden md:flex space-x-4">
-                    <Link
-                        href="/"
-                        className="text-gray-300 hover:bg-gray-700 hover:text-fuchsia-500 px-3 py-2 rounded-md text-sm font-medium"
+        <motion.nav
+            initial={{ y: -100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5 }}
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+                scrolled 
+                ? 'bg-black/80 backdrop-blur-md shadow-lg' 
+                : 'bg-transparent'
+            }`}
+        >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between items-center h-16">
+                    {/* Logo */}
+                    <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        className="flex-shrink-0"
                     >
-                        Home
-                    </Link>
-                    <Link
-                        href="/project"
-                        className="text-gray-300 hover:bg-gray-700 hover:text-fuchsia-500 px-3 py-2 rounded-md text-sm font-medium"
+                        <Link href="/" className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                            TarunGupta
+                        </Link>
+                    </motion.div>
+
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:flex md:items-center md:space-x-4">
+                        {navLinks.map((link) => (
+                            <motion.div
+                                key={link.href}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                <Link
+                                    href={link.href}
+                                    className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white relative group"
+                                >
+                                    {link.label}
+                                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <motion.div
+                        className="md:hidden"
+                        whileTap={{ scale: 0.95 }}
                     >
-                        Projects
-                    </Link>
-                    <Link
-                        href="/skills"
-                        className="text-gray-300 hover:bg-gray-700 hover:text-fuchsia-500 px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                        Skills
-                    </Link>
-                    <Link
-                        href="/contact"
-                        className="text-gray-300 hover:bg-gray-700 hover:text-fuchsia-500 px-3 py-2 rounded-md text-sm font-medium"
-                    >
-                        Contact
-                    </Link>
-                </div>
-                <div className="md:hidden">
-                    <button
-                        onClick={toggleMenu}
-                        className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-white"
-                        aria-label="Toggle menu"
-                    >
-                        <svg
-                            className="h-6 w-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="p-2 rounded-md text-gray-300 hover:text-white focus:outline-none"
                         >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 6h16M4 12h16m-7 6h7"
-                            />
-                        </svg>
-                    </button>
+                            {isOpen ? (
+                                <FiX className="h-6 w-6" />
+                            ) : (
+                                <FiMenu className="h-6 w-6" />
+                            )}
+                        </button>
+                    </motion.div>
                 </div>
             </div>
-            {isOpen && (
-                <div className="md:hidden">
-                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                        <Link
-                            href="/"
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+
+            {/* Mobile Menu */}
+            <motion.div
+                initial="closed"
+                animate={isOpen ? "open" : "closed"}
+                variants={menuVariants}
+                className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}
+            >
+                <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-md">
+                    {navLinks.map((link) => (
+                        <motion.div
+                            key={link.href}
+                            variants={itemVariants}
+                            whileTap={{ scale: 0.95 }}
                         >
-                            Home
-                        </Link>
-                        <Link
-                            href="/project"
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                        >
-                            Projects
-                        </Link>
-                        <Link
-                            href="/skills"
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                        >
-                            Skills
-                        </Link>
-                        <Link
-                            href="/contact"
-                            className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                        >
-                            Contact
-                        </Link>
-                    </div>
+                            <Link
+                                href={link.href}
+                                onClick={() => setIsOpen(false)}
+                                className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors duration-200"
+                            >
+                                {link.label}
+                            </Link>
+                        </motion.div>
+                    ))}
                 </div>
-            )}
-        </nav>
+            </motion.div>
+        </motion.nav>
     );
 };
 
