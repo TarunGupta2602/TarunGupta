@@ -33,8 +33,8 @@ const ProjectPage = () => {
       title: "Web Development Portfolio",
       description: "A showcase of web development projects demonstrating expertise in modern frontend technologies and responsive design principles.",
       image: "/port.png",
-      liveLink: "https://portfolio-zeta-beige-66.vercel.app/",
-      githubLink: "https://github.com/TarunGupta2602/webtask.github.io",
+      liveLink: "https://tarun-gupta.vercel.app/",
+      githubLink: "https://github.com/TarunGupta2602/TarunGupta2602",
       technologies: [
         { icon: <FaReact />, name: "React" },
         { icon: <SiTailwindcss />, name: "Tailwind CSS" },
