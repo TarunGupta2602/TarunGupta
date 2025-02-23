@@ -1,7 +1,6 @@
 "use client";
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import emailjs, { init } from '@emailjs/browser';
 import { FaEnvelope, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
 
 const ContactPage = () => {
@@ -9,36 +8,42 @@ const ContactPage = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState({ success: false, message: '' });
 
-    // Replace these with your EmailJS credentials
-    const EMAIL_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const EMAIL_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const EMAIL_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-    useEffect(() => {
-        init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
-    }, []);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        
+
+        const formData = {
+            name: formRef.current.name.value,
+            email: formRef.current.email.value,
+            message: formRef.current.message.value
+        };
+
         try {
-            await emailjs.sendForm(
-                EMAIL_SERVICE_ID,
-                EMAIL_TEMPLATE_ID,
-                formRef.current,
-                EMAIL_PUBLIC_KEY
-            );
-            
-            setSubmitStatus({
-                success: true,
-                message: "Message sent successfully! I'll get back to you soon."
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
             });
-            formRef.current.reset();
+
+            const result = await response.json();
+            if (result.message === 'Data saved successfully') {
+                setSubmitStatus({
+                    success: true,
+                    message: "Message sent successfully! I'll get back to you soon."
+                });
+                formRef.current.reset();
+            } else {
+                setSubmitStatus({
+                    success: false,
+                    message: result.message
+                });
+            }
         } catch (error) {
             setSubmitStatus({
                 success: false,
-                message: "Message sent successfully! I'll get back to you soon."
+                message: "Failed to send message. Please try again later."
             });
         } finally {
             setIsSubmitting(false);
