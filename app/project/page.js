@@ -30,6 +30,26 @@ const ProjectPage = () => {
       ]
     },
     {
+      title: "Pravah – Guiding Your Career Path",
+      description: "Pravah is a non-profit initiative dedicated to helping students, especially from Tier 3 colleges, overcome career doubts, fear of the future, and challenges in securing their first job or internship. Unlike traditional platforms that focus solely on courses and certifications, Pravah provides personalized guidance and mentorship by actively listening to students' concerns and helping them with the right career advice, skills, and opportunities.",
+      image: "/parvah.png",
+      liveLink: "https://parvah.vercel.app/",
+      githubLink: "https://github.com/TarunGupta2602/Parvah",
+      technologies: [
+        { icon: <SiNextdotjs />, name: "Next.js" },
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+        { icon: <SiMongodb />, name: "MongoDB" },
+        { icon: <SiExpress />, name: "Express.js" }
+      ],
+      features: [
+        "Modern UI/UX with responsive design",
+        "Real-time collaboration features",
+        "Advanced project management tools",
+        "Performance optimized architecture"
+      ]
+    },
+    {
       title: "Web Development Portfolio",
       description: "A showcase of web development projects demonstrating expertise in modern frontend technologies and responsive design principles.",
       image: "/port.png",
