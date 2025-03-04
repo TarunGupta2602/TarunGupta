@@ -50,6 +50,26 @@ const ProjectPage = () => {
       ]
     },
     {
+      title: "ShopEase",
+      description: "A modern e-commerce platform built with cutting-edge technologies, focusing on user experience and performance.",
+      image: "/shopease.png",
+      liveLink: "https://shopease-eosin.vercel.app/",
+      githubLink: "https://github.com/TarunGupta2602/ShopEase",
+      technologies: [
+        { icon: <SiNextdotjs />, name: "Next.js" },
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+        { icon: <SiMongodb />, name: "MongoDB" },
+        { icon: <SiExpress />, name: "Express.js" }
+      ],
+      features: [
+        "Modern UI/UX with responsive design",
+        "Real-time collaboration features",
+        "Advanced project management tools",
+        "Performance optimized architecture"
+      ]
+    },
+    {
       title: "Web Development Portfolio",
       description: "A showcase of web development projects demonstrating expertise in modern frontend technologies and responsive design principles.",
       image: "/port.png",
