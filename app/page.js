@@ -211,7 +211,7 @@ const Home = () => {
             </motion.a>
 
             <motion.a
-              href="https://docs.google.com/document/d/1BxDhg3eq-eJcy1MMOs8Px5AyZ8UGC5zCgy2_6clwElM/edit?usp=sharing"
+              href="https://drive.google.com/file/d/1lqwnlajj77mzmI7lxYRx_8beTUNiz10f/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 px-6 py-3 bg-purple-600 rounded-full hover:bg-purple-700 transition-colors"
