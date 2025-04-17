@@ -9,6 +9,26 @@ import { SiTailwindcss, SiNextdotjs, SiMongodb, SiExpress } from 'react-icons/si
 
 const ProjectPage = () => {
   const projects = [
+      {
+      title: "ECOMWEB",
+      description: "A complete E-Commerce website.",
+      image: "/ECOM.png",
+      liveLink: "https://ecomweb-rosy.vercel.app/",
+      githubLink: "https://github.com/TarunGupta2602/ECOMWEB",
+      technologies: [
+        { icon: <SiNextdotjs />, name: "Next.js" },
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+        { icon: <SiMongodb />, name: "MongoDB" },
+        { icon: <SiExpress />, name: "Express.js" }
+      ],
+      features: [
+        "Modern UI/UX with responsive design",
+        "Real-time collaboration features",
+        "Advanced project management tools",
+        "Performance optimized architecture"
+      ]
+    },
     {
       title: "GeekSoft",
       description: "A comprehensive software development platform offering cutting-edge solutions for modern businesses. Features include project management, team collaboration, and advanced analytics.",
