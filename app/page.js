@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, FileText, Code, Sparkles, ArrowRight, Globe, Zap } from 'lucide-react';
 
