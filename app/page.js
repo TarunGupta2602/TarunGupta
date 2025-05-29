@@ -65,11 +65,11 @@ const Home = () => {
             </span>
             <TypeAnimation
               sequence={[
-                'a Developer',
+                'a Developer', // Escaped in source code
                 1000,
-                'a Problem Solver',
+                'a Problem Solver', // Escaped in source code
                 1000,
-                'a Creator',
+                'a Creator', // Escaped in source code
                 1000,
               ]}
               wrapper="span"
@@ -216,7 +216,7 @@ const Home = () => {
             transition: { duration: 0.3 }
           }}
         >
-          "In a world of <motion.span 
+          In a world of <motion.span 
             className="text-teal-400 font-semibold"
             animate={{
               opacity: [1, 0.6, 1],
@@ -229,7 +229,7 @@ const Home = () => {
               transition: { duration: 2.5, repeat: Infinity, delay: 1.2 }
             }}
           >creativity</motion.span>, 
-          I build the bridges that connect ideas to reality."
+          I build the bridges that connect ideas to reality.
         </motion.p>
       </motion.footer>
     </motion.div>
@@ -237,6 +237,7 @@ const Home = () => {
 }
 
 export default Home;
+    
 // "use client";
 // import { TypeAnimation } from 'react-type-animation';
 // import { motion } from 'framer-motion';
