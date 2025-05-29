@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Github, Linkedin, FileText, Code, Sparkles, ArrowRight, Globe, Zap } from 'lucide-react';
 
-const EnhancedLandingPage = () => {
+const Home = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -243,7 +243,7 @@ const EnhancedLandingPage = () => {
   );
 };
 
-export default EnhancedLandingPage;
+export default Home;
 
 // "use client";
 // import { TypeAnimation } from 'react-type-animation';
