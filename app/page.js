@@ -123,7 +123,7 @@ const Home = () => {
               and a passion for user experience, I build websites that not only work—but wow.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              Outside of coding, I &apos m an explorer of tech, a contributor to open source,
+              Outside of coding, I&apos;m an explorer of tech, a contributor to open source,
               and someone who loves to share knowledge with fellow devs.
             </p>
           </motion.div>
@@ -253,6 +253,7 @@ const Home = () => {
 };
 
 export default Home;
+
 
     
 // "use client";
