@@ -17,7 +17,7 @@ const CreativePortfolio = () => {
   const skills = [
     { name: 'JavaScript', level: 95, color: '#F7DF1E' },
     { name: 'React.js', level: 90, color: '#61DAFB' },
-    { name: 'Next.js', level: 88, color: '#000000' },
+    { name: 'Next.js', level: 88, color: '#61DAFB' },
     { name: 'TypeScript', level: 85, color: '#3178C6' },
     { name: 'Node.js', level: 82, color: '#339933' },
     { name: 'MongoDB', level: 80, color: '#47A248' },
