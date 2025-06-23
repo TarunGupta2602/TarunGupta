@@ -167,20 +167,24 @@ const CreativePortfolio = () => {
             >
               Crafting digital experiences that push boundaries. Specialized in React.js, Next.js, and modern web technologies.
             </motion.p>
-
+            
             <motion.div 
               className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 mt-8 lg:mt-12 justify-center lg:justify-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
             >
-              <motion.div
+              <motion.a
+                href="https://www.linkedin.com/in/tarun2606/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full font-medium hover:shadow-2xl hover:shadow-cyan-500/25 transition-all cursor-pointer text-center"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Get In Touch
-              </motion.div>
+              </motion.a>
+              
               <motion.a
                 href="https://docs.google.com/document/d/1NcZZfxJ7LGEV5P-tFt8nkQuyHkOCvuLT/edit?usp=sharing"
                 target="_blank"
@@ -412,7 +416,7 @@ const CreativePortfolio = () => {
             className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-6 lg:mb-8 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
           >
-            Let&apos;s Build Something Amazing
+            Let's Build Something Amazing
           </motion.h2>
 
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 lg:gap-6 mb-8 lg:mb-12">
@@ -424,8 +428,8 @@ const CreativePortfolio = () => {
               <motion.a
                 key={link.name}
                 href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={link.name === 'Email' ? '_self' : '_blank'}
+                rel={link.name === 'Email' ? undefined : 'noopener noreferrer'}
                 className="flex items-center justify-center space-x-2 px-4 lg:px-6 py-2 lg:py-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:border-white/40 transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -450,7 +454,7 @@ const CreativePortfolio = () => {
             }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            &ldquo;Code is poetry written in logic&rdquo;
+            “Code is poetry written in logic”
           </motion.div>
         </motion.div>
       </footer>
