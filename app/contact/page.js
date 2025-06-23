@@ -184,7 +184,7 @@ const ContactPage = () => {
                             <ContactInfo 
                                 icon={FaMapMarkerAlt}
                                 title="Location"
-                                content="New Delhi, India"
+                                content="Ghaziabad, India"
                             />
                             <ContactInfo 
                                 icon={FaEnvelope}
