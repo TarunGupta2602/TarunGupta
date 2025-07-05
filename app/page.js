@@ -194,7 +194,7 @@ const CreativePortfolio = () => {
               Crafting innovative digital experiences with React.js, Next.js, and modern web technologies.
             </motion.p>
             <motion.p className="text-base sm:text-lg text-cyan-300 font-medium italic max-w-2xl mx-auto lg:mx-0">
-              "Turning ideas into interactive, beautiful, and scalable web solutions."
+              &quot;Turning ideas into interactive, beautiful, and scalable web solutions.&quot;
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row flex-wrap gap-6 mt-10 lg:mt-14 justify-center lg:justify-start"
@@ -414,7 +414,7 @@ const CreativePortfolio = () => {
               {experiences.map((exp, index) => (
                 <motion.div
                   key={exp.role}
-                  className="relative p-8 bg-white/10 backdrop-blur-lg rounded-3xl border border-cyan-400/20 hover:border-cyan-400/50 transition-all duration-300 shadow-lg hover:shadow-cyan-400/30 flex flex-col lg:flex-row gap-6 lg:gap-12 items-start group"
+                  className="relative p-8 bg-white/10 backdrop-blur-lg rounded-2xl border border-cyan-400/20 hover:border-cyan-400/50 transition-all duration-300 shadow-lg hover:shadow-cyan-400/30 flex flex-col lg:flex-row gap-6 lg:gap-12 items-start group"
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
