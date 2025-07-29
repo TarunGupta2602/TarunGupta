@@ -16,7 +16,7 @@ const geistMono = localFont({
 
 
 export const metadata = {
-  title: "I'm Tarun Gupta a Web Develooper.",
+  title: "I'm Tarun Gupta a Web Developer.",
   description: "I create And amazing Websites and Web Applications.",
    icons: {
     icon: "/programmer.png", // Path in your /public folder
