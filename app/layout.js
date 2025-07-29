@@ -14,9 +14,14 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+
 export const metadata = {
-  title: "Tarun's Portfolio",
-  description: "NEXTJS Web Application",
+  title: "I'm Tarun Gupta a Web Develooper.",
+  description: "I create And amazing Websites and Web Applications.",
+   icons: {
+    icon: "/programmer.png", // Path in your /public folder
+   
+  },
 };
 
 export default function RootLayout({ children }) {
