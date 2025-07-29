@@ -141,7 +141,7 @@ const CreativePortfolio = () => {
   const projects = [
     {
       title: 'ECOMWEB',
-      description: 'Full-stack e-commerce platform with secure authentication and dynamic cart functionality. Built with modern React patterns and optimized for performance.',
+      description: 'Full-stack e-commerce platform with secure authentication and dynamic cart functionality. It is built with modern React patterns and optimized for performance.',
       tech: ['Next.js', 'React', 'Clerk', 'JavaScript'],
       color: 'from-purple-400 to-pink-400',
       url: 'https://ecomweb-rosy.vercel.app/',
@@ -150,7 +150,7 @@ const CreativePortfolio = () => {
     },
     {
       title: 'ShopEase',
-      description: 'Modern electronics marketplace with server-side rendering and optimized performance. Features advanced filtering and search capabilities.',
+      description: 'Modern electronics marketplace with server-side rendering and optimized performance. It includes advanced filtering and search capabilities.',
       tech: ['Next.js', 'TypeScript', 'Vercel'],
       color: 'from-blue-400 to-cyan-400',
       url: 'https://shopease-eosin.vercel.app/',
@@ -159,7 +159,7 @@ const CreativePortfolio = () => {
     },
     {
       title: 'GeekSoft',
-      description: 'Service-based platform for documentation and printing with enhanced UX. Streamlined workflow for business document management.',
+      description: 'Service-based platform for documentation and printing with enhanced user experience. It streamlines workflow for business document management.',
       tech: ['React', 'Next.js', 'JavaScript'],
       color: 'from-green-400 to-teal-400',
       url: 'https://smartsolution-rust.vercel.app/',
@@ -168,7 +168,7 @@ const CreativePortfolio = () => {
     },
     {
       title: 'Parvah',
-      description: 'Educational platform with secure authentication and intuitive interface. Designed for seamless learning experiences.',
+      description: 'Educational platform with secure authentication and intuitive interface. It is designed for seamless learning experiences.',
       tech: ['React', 'Supabase', 'MongoDB'],
       color: 'from-orange-400 to-red-400',
       url: 'https://parvah.vercel.app/',
@@ -297,7 +297,7 @@ const CreativePortfolio = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <FaLinkedin /> Let's Connect
+                <FaLinkedin /> Let&apos s Connect
               </motion.a>
               <motion.a
                 href="https://drive.google.com/file/d/1Y8TBaba6m3ITRLuoDP6LUw_lDPyTy3dG/view?usp=sharing"
@@ -445,6 +445,7 @@ const CreativePortfolio = () => {
                     
                     {/* Content */}
                     <div className="flex-grow">
+                      {/* eslint-disable-next-line react/no-unescaped-entities */}
                       <p className="text-gray-700 mb-8 leading-relaxed text-xl font-medium">
                         {project.description}
                       </p>
