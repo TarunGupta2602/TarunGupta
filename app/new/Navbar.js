@@ -4,6 +4,7 @@ import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
+import Image from 'next/image';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -75,7 +76,12 @@ const Navbar = () => {
                         className="flex-shrink-0"
                     >
                         <Link href="/" className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-                            TarunGupta
+                              <Image
+      src="/download-removebg-preview.png"
+      width={200}
+      height={200}
+      alt="Picture of the author"
+    />
                         </Link>
                     </motion.div>
 

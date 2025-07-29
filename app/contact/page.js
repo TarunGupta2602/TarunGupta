@@ -24,7 +24,7 @@ const ContactPage = () => {
         formState: { errors } 
     } = useForm();
 
-    // Enhanced animation variants
+    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: { 
@@ -99,26 +99,26 @@ const ContactPage = () => {
 
     const ContactInfo = ({ icon: Icon, title, content }) => (
         <motion.div 
-            className="flex items-center space-x-4 bg-white/5 p-4 rounded-lg backdrop-blur-sm"
+            className="flex items-center space-x-4 bg-gray-100 p-4 rounded-lg shadow-sm"
             variants={itemVariants}
-            whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+            whileHover={{ scale: 1.05, backgroundColor: "rgba(229, 231, 235, 0.5)" }}
         >
-            <div className="bg-blue-500/20 p-3 rounded-full">
-                <Icon className="text-blue-400 text-xl" />
+            <div className="bg-blue-100 p-3 rounded-full">
+                <Icon className="text-blue-600 text-xl" />
             </div>
             <div>
-                <h3 className="text-gray-300 text-sm">{title}</h3>
-                <p className="text-white font-medium">{content}</p>
+                <h3 className="text-gray-600 text-sm font-medium">{title}</h3>
+                <p className="text-gray-800 font-medium">{content}</p>
             </div>
         </motion.div>
     );
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900/20 to-black">
+        <div className="min-h-screen bg-gray-50">
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <motion.div
-                    className="absolute w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"
+                    className="absolute w-72 h-72 bg-blue-200/30 rounded-full blur-3xl"
                     animate={{
                         x: [0, 100, 0],
                         y: [0, 50, 0],
@@ -132,7 +132,7 @@ const ContactPage = () => {
                     style={{ top: '20%', left: '10%' }}
                 />
                 <motion.div
-                    className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+                    className="absolute w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl"
                     animate={{
                         x: [0, -100, 0],
                         y: [0, -50, 0],
@@ -160,13 +160,13 @@ const ContactPage = () => {
                         variants={itemVariants}
                     >
                         <motion.h1 
-                            className="text-4xl md:text-5xl font-bold text-white mb-4"
+                            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
                             animate={floatingAnimation}
                         >
                             Let&apos;s Connect
                         </motion.h1>
                         <motion.p 
-                            className="text-gray-400 text-lg max-w-2xl mx-auto"
+                            className="text-gray-600 text-lg max-w-2xl mx-auto"
                             variants={itemVariants}
                         >
                             Have a project in mind or just want to chat? I&apos;d love to hear from you.
@@ -206,28 +206,28 @@ const ContactPage = () => {
                                     href="https://linkedin.com/in/tarun2606"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-blue-600/20 p-3 rounded-full hover:bg-blue-600/40 transition-colors"
+                                    className="bg-blue-100 p-3 rounded-full hover:bg-blue-200 transition-colors"
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
-                                    <FaLinkedin className="text-blue-400 text-xl" />
+                                    <FaLinkedin className="text-blue-600 text-xl" />
                                 </motion.a>
                                 <motion.a
                                     href="https://github.com/TarunGupta2602"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-gray-700/20 p-3 rounded-full hover:bg-gray-700/40 transition-colors"
+                                    className="bg-gray-200 p-3 rounded-full hover:bg-gray-300 transition-colors"
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.95 }}
                                 >
-                                    <FaGithub className="text-white text-xl" />
+                                    <FaGithub className="text-gray-800 text-xl" />
                                 </motion.a>
                             </motion.div>
                         </motion.div>
 
                         {/* Contact Form */}
                         <motion.div 
-                            className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-2xl border border-gray-700/50"
+                            className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200"
                             variants={itemVariants}
                             whileHover={{ scale: 1.02 }}
                             transition={{ type: "spring", stiffness: 300 }}
@@ -240,8 +240,8 @@ const ContactPage = () => {
                                     exit={{ opacity: 0, y: -20 }}
                                     className={`mb-6 p-4 rounded-lg ${
                                         submitStatus.success 
-                                            ? 'bg-green-500/20 text-green-300 border border-green-500/50' 
-                                            : 'bg-red-500/20 text-red-300 border border-red-500/50'
+                                            ? 'bg-green-100 text-green-700 border border-green-200' 
+                                            : 'bg-red-100 text-red-700 border border-red-200'
                                     }`}
                                 >
                                     {submitStatus.message}
@@ -258,7 +258,7 @@ const ContactPage = () => {
                                                 minLength: { value: 2, message: "Name must be at least 2 characters" }
                                             })}
                                             type="text" 
-                                            className="w-full pl-10 pr-4 py-3 bg-gray-800/50 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                            className="w-full pl-10 pr-4 py-3 bg-gray-50 text-gray-800 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                                             placeholder="Your Name"
                                         />
                                     </div>
@@ -266,7 +266,7 @@ const ContactPage = () => {
                                         <motion.p 
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            className="mt-2 text-sm text-red-400"
+                                            className="mt-2 text-sm text-red-500"
                                         >
                                             {errors.name.message}
                                         </motion.p>
@@ -285,7 +285,7 @@ const ContactPage = () => {
                                                 }
                                             })}
                                             type="email" 
-                                            className="w-full pl-10 pr-4 py-3 bg-gray-800/50 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                            className="w-full pl-10 pr-4 py-3 bg-gray-50 text-gray-800 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                                             placeholder="Your Email"
                                         />
                                     </div>
@@ -293,7 +293,7 @@ const ContactPage = () => {
                                         <motion.p 
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            className="mt-2 text-sm text-red-400"
+                                            className="mt-2 text-sm text-red-500"
                                         >
                                             {errors.email.message}
                                         </motion.p>
@@ -308,7 +308,7 @@ const ContactPage = () => {
                                                 required: "Message is required",
                                                 minLength: { value: 10, message: "Message must be at least 10 characters" }
                                             })}
-                                            className="w-full pl-10 pr-4 py-3 bg-gray-800/50 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 min-h-[120px]"
+                                            className="w-full pl-10 pr-4 py-3 bg-gray-50 text-gray-800 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 min-h-[120px]"
                                             placeholder="Your Message"
                                             rows="4"
                                         />
@@ -317,7 +317,7 @@ const ContactPage = () => {
                                         <motion.p 
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            className="mt-2 text-sm text-red-400"
+                                            className="mt-2 text-sm text-red-500"
                                         >
                                             {errors.message.message}
                                         </motion.p>
@@ -326,7 +326,7 @@ const ContactPage = () => {
 
                                 <motion.button 
                                     type="submit" 
-                                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg flex items-center justify-center space-x-2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-lg flex items-center justify-center space-x-2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                                     disabled={isSubmitting}
                                     variants={itemVariants}
                                     whileHover={{ 

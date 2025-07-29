@@ -297,7 +297,7 @@ const CreativePortfolio = () => {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <FaLinkedin /> Let&apos s Connect
+                <FaLinkedin /> Lets Connect
               </motion.a>
               <motion.a
                 href="https://drive.google.com/file/d/1Y8TBaba6m3ITRLuoDP6LUw_lDPyTy3dG/view?usp=sharing"
