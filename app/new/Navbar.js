@@ -9,8 +9,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
-    
-    useEffect(() => { 
+    useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
         };
@@ -63,25 +62,25 @@ const Navbar = () => {
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
             className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-                scrolled 
-                ? 'bg-black/80 backdrop-blur-md shadow-lg' 
-                : 'bg-transparent'
+                scrolled
+                    ? 'bg-white/10 backdrop-blur-lg shadow-lg'
+                    : 'bg-transparent'
             }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
+                <div className="flex justify-between items-center h-16 sm:h-20">
                     {/* Logo */}
                     <motion.div
                         whileHover={{ scale: 1.05 }}
                         className="flex-shrink-0"
                     >
-                        <Link href="/" className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
+                        <Link href="/" className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                             TarunGupta
                         </Link>
                     </motion.div>
 
                     {/* Desktop Navigation */}
-                    <div className="hidden md:flex md:items-center md:space-x-4">
+                    <div className="hidden md:flex md:items-center md:space-x-6">
                         {navLinks.map((link) => (
                             <motion.div
                                 key={link.href}
@@ -90,10 +89,10 @@ const Navbar = () => {
                             >
                                 <Link
                                     href={link.href}
-                                    className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white relative group"
+                                    className="px-4 py-2 text-sm font-medium text-orange-600 hover:text-indigo-300 relative group transition-colors duration-200"
                                 >
                                     {link.label}
-                                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-400 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                                 </Link>
                             </motion.div>
                         ))}
@@ -106,7 +105,8 @@ const Navbar = () => {
                     >
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="p-2 rounded-md text-gray-300 hover:text-white focus:outline-none"
+                            className="p-2 rounded-full text-black hover:bg-white/20 focus:outline-none transition-colors duration-200"
+                            aria-label="Toggle menu"
                         >
                             {isOpen ? (
                                 <FiX className="h-6 w-6" />
@@ -125,7 +125,7 @@ const Navbar = () => {
                 variants={menuVariants}
                 className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}
             >
-                <div className="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-md">
+                <div className="px-4 pt-4 pb-6 space-y-2 bg-white/10 backdrop-blur-lg border-t border-white/20">
                     {navLinks.map((link) => (
                         <motion.div
                             key={link.href}
@@ -135,7 +135,7 @@ const Navbar = () => {
                             <Link
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 rounded-md transition-colors duration-200"
+                                className="block px-4 py-3 text-base font-medium text-orange-400 hover:bg-indigo-500/20 hover:text-indigo-200 rounded-lg transition-colors duration-200"
                             >
                                 {link.label}
                             </Link>
