@@ -497,7 +497,6 @@ const CreativePortfolio = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-           
           </motion.div>
         </div>
       </section>
@@ -559,7 +558,7 @@ const CreativePortfolio = () => {
         <ParallaxCard>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Let's Build Something Amazing Together
+              Let&apos;s Build Something Amazing Together
             </h2>
             <div className="flex flex-wrap justify-center gap-6 mb-12">
               {[
@@ -582,7 +581,7 @@ const CreativePortfolio = () => {
               ))}
             </div>
             <p className="text-gray-500 text-lg font-medium">
-              "Code is Poetry Written in Logic"
+              &quot;Code is Poetry Written in Logic&quot;
             </p>
           </div>
         </ParallaxCard>
