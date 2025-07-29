@@ -5,7 +5,7 @@ import { FaReact, FaNodeJs, FaJs, FaGithub, FaLinkedin, FaEnvelope, FaBuilding, 
 import { SiNextdotjs, SiMongodb, SiTypescript, SiTailwindcss, SiSupabase, SiVercel, SiMysql } from 'react-icons/si';
 
 // Enhanced Scroll-triggered stacking card component for projects
-const ProjectStackingCard = ({ children, index, total }) => {
+export const ProjectStackingCard = ({ children, index, total }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -21,6 +21,10 @@ const ProjectStackingCard = ({ children, index, total }) => {
   // Card stacking with deeper z-index separation
   const zIndex = total - index;
 
+  // Dynamic top offset for tiered stacking (6rem + index*3rem)
+  const topOffset = 6 + index * 3; // in rem
+  const topClass = `top-[${topOffset}rem]`;
+
   return (
     <motion.div
       ref={ref}
@@ -31,7 +35,7 @@ const ProjectStackingCard = ({ children, index, total }) => {
         rotate,
         zIndex: zIndex + 10, // Higher z-index for better stacking
       }}
-      className="sticky top-24 mb-8"
+      className={`sticky ${topClass} mb-8`}
     >
       {children}
     </motion.div>
@@ -199,7 +203,7 @@ const CreativePortfolio = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 text-gray-800 overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-950 dark:to-blue-950 text-gray-800 dark:text-[whitesmoke] overflow-x-hidden">
       {/* Floating cursor */}
       <motion.div
         className="fixed top-0 left-0 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full pointer-events-none z-50 mix-blend-multiply hidden md:block"
@@ -256,16 +260,16 @@ const CreativePortfolio = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              <h1 className="text-6xl lg:text-8xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-6xl lg:text-8xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent leading-tight dark:text-[whitesmoke]">
                 TARUN
               </h1>
-              <h1 className="text-6xl lg:text-8xl font-black bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-6xl lg:text-8xl font-black bg-gradient-to-r from-teal-600 via-blue-600 to-purple-600 bg-clip-text text-transparent leading-tight dark:text-[whitesmoke]">
                 GUPTA
               </h1>
             </motion.div>
             
             <motion.h2 
-              className="text-3xl lg:text-4xl font-light text-gray-600"
+              className="text-3xl lg:text-4xl font-light text-gray-600 dark:text-[whitesmoke]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 1 }}
@@ -274,7 +278,7 @@ const CreativePortfolio = () => {
             </motion.h2>
 
             <motion.p 
-              className="text-xl text-gray-500 max-w-2xl leading-relaxed"
+              className="text-xl text-gray-500 max-w-2xl leading-relaxed dark:text-[whitesmoke]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7, duration: 1 }}
@@ -360,7 +364,7 @@ const CreativePortfolio = () => {
       <section className="py-32 px-6 relative">
         <div className="max-w-7xl mx-auto">
           <ParallaxCard>
-            <h2 className="text-6xl lg:text-8xl font-black text-center mb-20 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-6xl lg:text-8xl font-black text-center mb-20 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:text-[whitesmoke]">
               SKILLS
             </h2>
           </ParallaxCard>
@@ -369,7 +373,7 @@ const CreativePortfolio = () => {
             {skills.map((skill, index) => (
               <StackingCard key={skill.name} index={index} total={skills.length}>
                 <motion.div 
-                  className="bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-gray-200/50 mx-auto max-w-4xl"
+                  className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg rounded-3xl p-8 shadow-2xl border border-gray-200/50 dark:border-gray-700/50 mx-auto max-w-4xl"
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -379,7 +383,7 @@ const CreativePortfolio = () => {
                         {skill.icon}
                       </div>
                       <div>
-                        <h3 className="text-3xl font-bold text-gray-800">{skill.name}</h3>
+                        <h3 className="text-3xl font-bold text-gray-800 dark:text-white">{skill.name}</h3>
                         <p className="text-gray-500">Proficiency Level</p>
                       </div>
                     </div>
@@ -402,10 +406,10 @@ const CreativePortfolio = () => {
       </section>
 
       {/* Projects Section with Enhanced Stacking Animation */}
-      <section className="py-32 px-6 bg-gradient-to-br from-gray-50 to-blue-50 relative">
+      <section className="py-32 px-6 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-blue-950 relative">
         <div className="max-w-6xl mx-auto">
           <ParallaxCard>
-            <h2 className="text-6xl lg:text-8xl font-black text-center mb-32 bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent">
+            <h2 className="text-6xl lg:text-8xl font-black text-center mb-32 bg-gradient-to-r from-purple-600 to-teal-600 bg-clip-text text-transparent dark:text-[whitesmoke]">
               PROJECTS
             </h2>
           </ParallaxCard>
@@ -415,7 +419,7 @@ const CreativePortfolio = () => {
             {projects.map((project, index) => (
               <ProjectStackingCard key={project.title} index={index} total={projects.length}>
                 <motion.div 
-                  className={`${project.gradient} rounded-3xl p-10 shadow-2xl border border-white/50 group cursor-pointer mx-auto max-w-5xl min-h-[500px] flex flex-col justify-between backdrop-blur-sm`}
+                  className={`bg-white/80 dark:bg-gray-900/80 rounded-3xl p-10 shadow-2xl border border-white/50 dark:border-gray-700/50 group cursor-pointer mx-auto max-w-5xl min-h-[500px] flex flex-col justify-between backdrop-blur-sm`}
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
                 >
@@ -427,7 +431,7 @@ const CreativePortfolio = () => {
                           <span className="text-white text-2xl font-bold">{index + 1}</span>
                         </div>
                         <div>
-                          <h3 className="text-4xl font-black text-gray-800 mb-2">{project.title}</h3>
+                          <h3 className="text-4xl font-black text-gray-800 mb-2 dark:text-white">{project.title}</h3>
                           <div className="flex items-center gap-2 text-gray-600">
                             <div className={`w-2 h-2 bg-gradient-to-r ${project.accentColor} rounded-full`}></div>
                             <span className="text-sm uppercase tracking-wider font-semibold">Featured Project</span>
@@ -446,7 +450,7 @@ const CreativePortfolio = () => {
                     {/* Content */}
                     <div className="flex-grow">
                       {/* eslint-disable-next-line react/no-unescaped-entities */}
-                      <p className="text-gray-700 mb-8 leading-relaxed text-xl font-medium">
+                      <p className="text-gray-700 mb-8 leading-relaxed text-xl font-medium dark:text-[whitesmoke]">
                         {project.description}
                       </p>
                       
@@ -506,7 +510,7 @@ const CreativePortfolio = () => {
       <section className="py-32 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <ParallaxCard>
-            <h2 className="text-6xl lg:text-8xl font-black text-center mb-20 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-6xl lg:text-8xl font-black text-center mb-20 bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent dark:text-[whitesmoke]">
               EXPERIENCE
             </h2>
           </ParallaxCard>
@@ -515,7 +519,7 @@ const CreativePortfolio = () => {
             {experiences.map((exp, index) => (
               <StackingCard key={exp.role} index={index} total={experiences.length}>
                 <motion.div 
-                  className={`bg-gradient-to-br ${exp.bgColor} rounded-3xl p-8 shadow-2xl border border-white/50 mx-auto max-w-5xl`}
+                  className={`bg-gradient-to-br ${exp.bgColor} dark:bg-gray-900/80 rounded-3xl p-8 shadow-2xl border border-white/50 dark:border-gray-700/50 mx-auto max-w-5xl`}
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -529,7 +533,7 @@ const CreativePortfolio = () => {
                       <p className="text-purple-600 font-semibold">{exp.period}</p>
                     </div>
                     <div className="lg:w-2/3">
-                      <p className="text-gray-600 mb-6 text-lg leading-relaxed">{exp.description}</p>
+                      <p className="text-gray-600 mb-6 text-lg leading-relaxed dark:text-[whitesmoke]">{exp.description}</p>
                       <div className="grid lg:grid-cols-2 gap-4">
                         {exp.achievements.map((achievement, i) => (
                           <motion.div
@@ -555,10 +559,10 @@ const CreativePortfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-20 px-6 bg-gradient-to-br from-blue-50 to-purple-50 border-t border-gray-200">
+      <footer className="py-20 px-6 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-purple-950 border-t border-gray-200 dark:border-gray-700">
         <ParallaxCard>
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent dark:text-[whitesmoke]">
               Let&apos;s Build Something Amazing Together
             </h2>
             <div className="flex flex-wrap justify-center gap-6 mb-12">

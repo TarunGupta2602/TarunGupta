@@ -49,7 +49,7 @@ const SkillsPage = () => {
     <motion.div 
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-screen bg-gray-50 p-6 md:p-12"
+      className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-[whitesmoke] p-6 md:p-12"
     >
       <motion.div
         initial={{ y: -50, opacity: 0 }}
@@ -57,10 +57,10 @@ const SkillsPage = () => {
         transition={{ duration: 0.8 }}
         className="text-center mb-12"
       > 
-        <h1 className="text-4xl mt-16 md:text-5xl font-bold text-gray-800 mb-4">
+        <h1 className="text-4xl mt-16 md:text-5xl font-bold text-gray-800 mb-4 dark:text-[whitesmoke]">
           My Technical Arsenal
         </h1>
-        <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+        <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto dark:text-[whitesmoke]">
           A comprehensive overview of my technical skills and expertise in various domains of software development.
         </p>
       </motion.div>
@@ -100,14 +100,14 @@ const SkillsPage = () => {
                 key={skill.title}
                 variants={skillCard}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg hover:shadow-blue-200 transition-all duration-300"
+                className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-md hover:shadow-lg hover:shadow-blue-200 dark:hover:shadow-blue-900 transition-all duration-300"
               >
                 <div className="flex items-center gap-4 mb-4">
                   <div className="text-blue-600">
                     {skill.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-800">{skill.title}</h3>
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-white">{skill.title}</h3>
                     <p className="text-gray-500 text-sm">{category.charAt(0).toUpperCase() + category.slice(1)}</p>
                   </div>
                 </div>
@@ -135,14 +135,14 @@ const SkillsPage = () => {
         transition={{ delay: 1 }}
         className="text-center mt-16"
       >
-        <p className="text-gray-600 text-lg">
+        <p className="text-gray-600 text-lg dark:text-[whitesmoke]">
           Always learning, always growing. Check out my projects to see these skills in action!
         </p>
         <motion.a
           href="/project"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="inline-block mt-4 px-8 py-3 bg-blue-500 text-white rounded-full font-bold hover:bg-blue-600 transition-colors duration-300"
+          className="inline-block mt-4 px-8 py-3 bg-blue-500 text-white rounded-full font-bold hover:bg-blue-600 transition-colors duration-300 dark:text-[whitesmoke]"
         >
           View Projects →
         </motion.a>

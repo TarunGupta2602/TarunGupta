@@ -106,14 +106,14 @@ const ContactPage = () => {
                 <Icon className="text-blue-600 text-xl" />
             </div>
             <div>
-                <h3 className="text-gray-600 text-sm font-medium">{title}</h3>
-                <p className="text-gray-800 font-medium">{content}</p>
+                <h3 className="text-gray-600 text-sm font-medium dark:text-[whitesmoke]">{title}</h3>
+                <p className="text-black font-medium !text-black">{content}</p>
             </div>
         </motion.div>
     );
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 dark:text-[whitesmoke]">
             <div className="relative container mx-auto px-4 py-20">
                 <motion.div
                     variants={containerVariants}
@@ -126,13 +126,13 @@ const ContactPage = () => {
                         variants={itemVariants}
                     >
                         <motion.h1 
-                            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4"
+                            className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 dark:text-[whitesmoke]"
                             animate={floatingAnimation}
                         >
                             Let&apos;s Connect
                         </motion.h1>
                         <motion.p 
-                            className="text-gray-600 text-lg max-w-2xl mx-auto"
+                            className="text-gray-600 text-lg max-w-2xl mx-auto dark:text-[whitesmoke]"
                             variants={itemVariants}
                         >
                             Have a project in mind or just want to chat? I&apos;d love to hear from you.
@@ -189,7 +189,7 @@ const ContactPage = () => {
                         </motion.div>
 
                         <motion.div 
-                            className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200"
+                            className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"
                             variants={itemVariants}
                             whileHover={{ scale: 1.02 }}
                             transition={{ type: "spring", stiffness: 300 }}
@@ -227,7 +227,7 @@ const ContactPage = () => {
                                         <motion.p 
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            className="mt-2 text-sm text-red-500"
+                                            className="mt-2 text-sm text-red-500 dark:text-red-300"
                                         >
                                             {errors.name.message}
                                         </motion.p>
@@ -254,7 +254,7 @@ const ContactPage = () => {
                                         <motion.p 
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            className="mt-2 text-sm text-red-500"
+                                            className="mt-2 text-sm text-red-500 dark:text-red-300"
                                         >
                                             {errors.email.message}
                                         </motion.p>
@@ -278,7 +278,7 @@ const ContactPage = () => {
                                         <motion.p 
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            className="mt-2 text-sm text-red-500"
+                                            className="mt-2 text-sm text-red-500 dark:text-red-300"
                                         >
                                             {errors.message.message}
                                         </motion.p>
