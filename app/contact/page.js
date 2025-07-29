@@ -24,7 +24,6 @@ const ContactPage = () => {
         formState: { errors } 
     } = useForm();
 
-    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: { 
@@ -57,41 +56,41 @@ const ContactPage = () => {
 
     const onSubmit = async (data) => {
         setIsSubmitting(true);
-        
+
         try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
+            const payload = {
+                ...data,
+                submittedAt: new Date().toLocaleString(),
+            };
+
+            const response = await fetch("https://sheetdb.io/api/v1/50hgjha2lly1b", {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
+                    "Content-Type": "application/json",
                 },
-                body: JSON.stringify(data),
+                body: JSON.stringify({ data: [payload] }),
             });
 
+            const result = await response.json();
+            console.log("SheetDB Response:", result);
+
             if (!response.ok) {
-                throw new Error('Failed to send message');
+                throw new Error(result.error || "Failed to send message");
             }
 
             setSubmitStatus({
                 success: true,
                 message: "Message sent successfully! I'll get back to you soon."
             });
-            
+
             reset();
-            setTimeout(() => {
-                setSubmitStatus({ success: false, message: '' });
-                window.location.reload();
-            }, 3000);
 
         } catch (error) {
-            console.error('Error sending message:', error);
+            console.error("Error sending message:", error);
             setSubmitStatus({
                 success: false,
                 message: "There was an error sending your message. Please try again."
             });
-            
-            setTimeout(() => {
-                setSubmitStatus({ success: false, message: '' });
-            }, 5000);
         } finally {
             setIsSubmitting(false);
         }
@@ -115,38 +114,6 @@ const ContactPage = () => {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            {/* Animated background elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <motion.div
-                    className="absolute w-72 h-72 bg-blue-200/30 rounded-full blur-3xl"
-                    animate={{
-                        x: [0, 100, 0],
-                        y: [0, 50, 0],
-                        scale: [1, 1.2, 1],
-                    }}
-                    transition={{
-                        duration: 15,
-                        repeat: Infinity,
-                        ease: "linear"
-                    }}
-                    style={{ top: '20%', left: '10%' }}
-                />
-                <motion.div
-                    className="absolute w-96 h-96 bg-indigo-200/30 rounded-full blur-3xl"
-                    animate={{
-                        x: [0, -100, 0],
-                        y: [0, -50, 0],
-                        scale: [1, 1.2, 1],
-                    }}
-                    transition={{
-                        duration: 20,
-                        repeat: Infinity,
-                        ease: "linear"
-                    }}
-                    style={{ bottom: '20%', right: '10%' }}
-                />
-            </div>
-
             <div className="relative container mx-auto px-4 py-20">
                 <motion.div
                     variants={containerVariants}
@@ -154,7 +121,6 @@ const ContactPage = () => {
                     animate="visible"
                     className="max-w-6xl mx-auto"
                 >
-                    {/* Header Section */}
                     <motion.div 
                         className="text-center mb-16"
                         variants={itemVariants}
@@ -174,9 +140,7 @@ const ContactPage = () => {
                         </motion.p>
                     </motion.div>
 
-                    {/* Main Content Grid */}
                     <div className="grid md:grid-cols-2 gap-12 items-start">
-                        {/* Contact Information */}
                         <motion.div 
                             className="space-y-6"
                             variants={containerVariants}
@@ -197,7 +161,6 @@ const ContactPage = () => {
                                 content="+91 7456096455"
                             />
 
-                            {/* Social Links */}
                             <motion.div 
                                 className="flex space-x-4 mt-8"
                                 variants={itemVariants}
@@ -225,14 +188,12 @@ const ContactPage = () => {
                             </motion.div>
                         </motion.div>
 
-                        {/* Contact Form */}
                         <motion.div 
                             className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200"
                             variants={itemVariants}
                             whileHover={{ scale: 1.02 }}
                             transition={{ type: "spring", stiffness: 300 }}
                         >
-                            {/* Status Message */}
                             {submitStatus.message && (
                                 <motion.div 
                                     initial={{ opacity: 0, y: -20 }}
@@ -329,11 +290,7 @@ const ContactPage = () => {
                                     className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white py-3 px-6 rounded-lg flex items-center justify-center space-x-2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                                     disabled={isSubmitting}
                                     variants={itemVariants}
-                                    whileHover={{ 
-                                        scale: 1.02,
-                                        backgroundPosition: ['0%', '100%'],
-                                        transition: { duration: 0.8 }
-                                    }}
+                                    whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
                                     <motion.div
