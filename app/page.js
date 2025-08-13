@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import { FaReact, FaNodeJs, FaJs, FaGithub, FaLinkedin, FaEnvelope, FaBuilding, FaExternalLinkAlt } from 'react-icons/fa';
 import { SiNextdotjs, SiMongodb, SiTypescript, SiTailwindcss, SiSupabase, SiVercel, SiMysql } from 'react-icons/si';
-
+import Image from 'next/image';
 // Enhanced Scroll-triggered stacking card component for projects
 export const ProjectStackingCard = ({ children, index, total }) => {
   const ref = useRef(null);
@@ -347,31 +347,45 @@ const CreativePortfolio = () => {
           </motion.div>
 
           <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-          >
-            <div className="relative w-full h-96 lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-              <div className="text-8xl text-white/80">👨‍💻</div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            </div>
-            {/* Floating elements around the image */}
-            <motion.div
-              className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center shadow-lg"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-            >
-              <FaReact className="text-white text-2xl" />
-            </motion.div>
-            <motion.div
-              className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-green-400 to-teal-400 rounded-full flex items-center justify-center shadow-lg"
-              animate={{ y: [-10, 10, -10] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            >
-              <SiNextdotjs className="text-white text-xl" />
-            </motion.div>
-          </motion.div>
+      className="relative w-full max-w-7xl mx-auto"
+      initial={{ opacity: 0, x: 100 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1, delay: 0.3 }}
+    >
+      <div className="relative w-full h-80 sm:h-96 lg:h-[550px] rounded-3xl overflow-hidden shadow-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+        {/* Profile Image */}
+        <Image
+          src="/me.jpg" // Replace with your actual image path
+          alt="Tarun Gupta"
+          layout="fill"
+          objectFit="cover"
+          className="rounded-5xl opacity-90"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+        {/* Overlay Text */}
+        <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 text-white">
+         
+          <p className="mt-1 text-base sm:text-lg lg:text-xl font-medium opacity-80">
+            Crafting Innovative Web Solutions
+          </p>
+        </div>
+      </div>
+      {/* Floating elements around the image */}
+      <motion.div
+        className="absolute -top-3 -right-3 w-14 h-14 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center shadow-md"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+      >
+        <FaReact className="text-white text-lg" />
+      </motion.div>
+      <motion.div
+        className="absolute -bottom-3 -left-3 w-12 h-12 bg-gradient-to-r from-green-400 to-teal-400 rounded-full flex items-center justify-center shadow-md"
+        animate={{ y: [-8, 8, -8] }}
+        transition={{ duration: 3, repeat: Infinity }}
+      >
+        <SiNextdotjs className="text-white text-base" />
+      </motion.div>
+    </motion.div>
         </div>
 
         {/* Contact info */}
