@@ -153,7 +153,7 @@ const CreativePortfolio = () => {
       accentColor: 'from-purple-500 to-pink-500',
     },
     {
-      title: 'MaharanaFitness',
+      title: 'GYM Website',
       description: 'A fitness app that provides personalized workout plans and meal plans, making it easier for users to maintain a healthy lifestyle.',
       tech: ['Next.js', 'React','JavaScript'],
       color: 'from-purple-400 to-pink-400',
