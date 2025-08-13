@@ -144,6 +144,33 @@ const CreativePortfolio = () => {
 
   const projects = [
     {
+      title: 'Devora',
+      description: 'Our Comapnay website to showcase our services and projects. It features a modern design, responsive layout, and interactive elements to engage visitors.',
+      tech: ['Next.js', 'React','JavaScript'],
+      color: 'from-purple-400 to-pink-400',
+      url: 'https://sitezy.vercel.app/',
+      gradient: 'bg-gradient-to-br from-purple-50 to-pink-50',
+      accentColor: 'from-purple-500 to-pink-500',
+    },
+    {
+      title: 'MaharanaFitness',
+      description: 'A fitness app that provides personalized workout plans and meal plans, making it easier for users to maintain a healthy lifestyle.',
+      tech: ['Next.js', 'React','JavaScript'],
+      color: 'from-purple-400 to-pink-400',
+      url: 'https://www.maharanafitness.online/',
+      gradient: 'bg-gradient-to-br from-purple-50 to-pink-50',
+      accentColor: 'from-purple-500 to-pink-500',
+    },
+    {
+      title: 'A Quick Commerce Website',
+      description: 'This is a quick commerce website that allows users to order products online with fast delivery options. It features a user-friendly interface, secure payment processing, and real-time order tracking.',
+      tech: ['Next.js', 'React','JavaScript','supabase,'],
+      color: 'from-purple-400 to-pink-400',
+      url: 'https://lusekelo.vercel.app/',
+      gradient: 'bg-gradient-to-br from-purple-50 to-pink-50',
+      accentColor: 'from-purple-500 to-pink-500',
+    },
+    {
       title: 'ECOMWEB',
       description: 'Full-stack e-commerce platform with secure authentication and dynamic cart functionality. It is built with modern React patterns and optimized for performance.',
       tech: ['Next.js', 'React', 'Clerk', 'JavaScript'],

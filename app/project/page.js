@@ -9,6 +9,66 @@ import { ProjectStackingCard } from '../page';
 const ProjectPage = () => {
   const projects = [
     {
+      title: "Devora",
+      description: "Our Companay wbsite is built using Next.js, React, and Tailwind CSS. It is designed for a gym business.",
+      image: "/dev.png",
+      liveLink: "https://sitezy.vercel.app/",
+      githubLink: "https://github.com/TarunGupta2602/Devora",
+      technologies: [
+        { icon: <SiNextdotjs />, name: "Next.js" },
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+        { icon: <SiMongodb />, name: "Supabase" }, 
+        { icon: <SiExpress />, name: "Express.js" }
+      ],
+      features: [
+        "Modern UI/UX with responsive design",
+        "Real-time collaboration features",
+        "Advanced project management tools",
+        "Performance optimized architecture"
+      ]
+    },
+    {
+      title: "Quick Commerce Website",
+      description: "A complete Quick-commerce website with a focus on seamless user experience.",
+      image: "/quick.png",
+      liveLink: "https://lusekelo.vercel.app/",
+      githubLink: "https://github.com/TarunGupta2602/lusekelo",
+      technologies: [
+        { icon: <SiNextdotjs />, name: "Next.js" },
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+        { icon: <SiMongodb />, name: "Supabase" }, 
+        { icon: <SiExpress />, name: "Express.js" }
+      ],
+      features: [
+        "Modern UI/UX with responsive design",
+        "Real-time collaboration features",
+        "Advanced project management tools",
+        "Performance optimized architecture"
+      ]
+    },
+    {
+      title: "GYMWEB",
+      description: "A modern gym management system designed to streamline operations and enhance user experience.",
+      image: "/gym.png",
+      liveLink: "https://maharanafitness.online/",
+      githubLink: "https://github.com/TarunGupta2602/MaharanaFitness",
+      technologies: [
+        { icon: <SiNextdotjs />, name: "Next.js" },
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+        { icon: <SiMongodb />, name: "MongoDB" }, 
+        { icon: <SiExpress />, name: "Express.js" }
+      ],
+      features: [
+        "Modern UI/UX with responsive design",
+        "Real-time collaboration features",
+        "Advanced project management tools",
+        "Performance optimized architecture"
+      ]
+    },
+    {
       title: "ECOMWEB",
       description: "A complete E-Commerce website with a focus on seamless user experience.",
       image: "/ECOM.png",
