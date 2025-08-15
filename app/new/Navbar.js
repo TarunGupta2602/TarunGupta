@@ -81,10 +81,10 @@ const Navbar = () => {
                         <Link href="/" className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                             <Image
                                 src="/download-removebg-preview.png"
-                                width={128}
-                                height={128}
+                                width={198}
+                                height={198}
                                 alt="Logo"
-                                className="object-contain w-32 h-32 transition-all duration-300 dark:invert"
+                                className="object-contain w-62 h-72  transition-all duration-300 dark:invert"
                             />
                         </Link>
                     </motion.div>
@@ -148,10 +148,10 @@ const Navbar = () => {
                         <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center">
                             <Image
                                 src="/download-removebg-preview.png"
-                                width={112}
-                                height={112}
+                                width={172}
+                                height={172}
                                 alt="Logo"
-                                className="object-contain w-28 h-28 dark:invert"
+                                className="object-contain w-68 h-68  dark:invert"
                             />
                         </Link>
                         <button
