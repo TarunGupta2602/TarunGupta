@@ -331,7 +331,7 @@ const CreativePortfolio = () => {
                 <FaLinkedin /> Lets Connect
               </motion.a>
               <motion.a
-                href="https://drive.google.com/file/d/1Y8TBaba6m3ITRLuoDP6LUw_lDPyTy3dG/view?usp=sharing"
+                href="https://drive.google.com/file/d/1L9LhwXVghjO7Q4kGoNs1LKy3VWs-AR5X/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-full font-semibold text-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 flex items-center gap-3 justify-center"
